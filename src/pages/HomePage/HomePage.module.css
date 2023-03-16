@@ -1,0 +1,17 @@
+.title {
+  margin-bottom: 15px;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+}
+
+.item {
+  padding: 20px;
+  outline: 1px solid red;
+}
+
+.item:not(:last-child) {
+  margin-bottom: 10px;
+}

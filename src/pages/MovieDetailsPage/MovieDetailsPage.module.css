@@ -1,0 +1,44 @@
+.button {
+  margin-top: 5px;
+  margin-bottom: 12px;
+  padding: 5px;
+  cursor: pointer;
+  background-color: rgba(104, 124, 238, 0.582);
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+.button:hover,
+.button:focus {
+  background-color: rgba(34, 34, 184, 0.918);
+  color: white;
+}
+
+.box {
+  display: flex;
+}
+
+.description {
+  margin-left: 10px;
+}
+
+.overview {
+  max-width: 500px;
+}
+
+.text {
+  padding: 10px;
+  line-height: 1.5;
+}
+
+.list {
+  list-style: none;
+}
+
+.img {
+  margin-bottom: 5px;
+}
+
+.pages {
+  font-size: 20px;
+}
