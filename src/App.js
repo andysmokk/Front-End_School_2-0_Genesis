@@ -3,17 +3,19 @@ import { Route, Switch } from 'react-router';
 import { lazy, Suspense } from 'react';
 import Navigation from './components/Navigation/Navigation.jsx';
 
-const HomePage = lazy(() =>
-  import('./pages/HomePage/HomePage' /* webpackChunkName: "home_page" */),
+const CoursesPage = lazy(() =>
+  import(
+    './pages/CoursesPage/CoursesPage' /* webpackChunkName: "courses_page" */
+  ),
 );
 const NotFoundPage = lazy(() =>
   import(
     './pages/NotFoundPage/NotFoundPage' /* webpackChunkName: "not_found__page" */
   ),
 );
-const MovieDetailsPage = lazy(() =>
+const CourseDetailsPage = lazy(() =>
   import(
-    './pages/MovieDetailsPage/MovieDetailsPage' /* webpackChunkName: "movies_details_page" */
+    './pages/CourseDetailsPage/CourseDetailsPage' /* webpackChunkName: "course_details_page" */
   ),
 );
 
@@ -25,11 +27,11 @@ function App() {
       <Suspense fallback={<h1>Loading...</h1>}>
         <Switch>
           <Route exact path="/">
-            <HomePage />
+            <CoursesPage />
           </Route>
 
           <Route path="/courses/:courseId">
-            <MovieDetailsPage />
+            <CourseDetailsPage />
           </Route>
 
           <Route>

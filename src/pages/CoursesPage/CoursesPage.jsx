@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import coursesAPI from '../../services/coursesApi';
 import Pagination from '../../components/Pagination/Pagination';
-import s from './HomePage.module.css';
+import s from './CoursesPage.module.css';
 
-function HomePage() {
-  // const location = useLocation();
+function CoursesPage() {
   const [courses, setCourses] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -70,4 +69,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export default CoursesPage;

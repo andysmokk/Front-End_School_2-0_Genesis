@@ -3,9 +3,9 @@ import { useParams } from 'react-router';
 import { useHistory, useLocation } from 'react-router-dom';
 import coursesAPI from '../../services/coursesApi';
 import VideoPlayer from '../../components/VideoPlayer/VideoPlayer';
-import s from './MovieDetailsPage.module.css';
+import s from './CourseDetailsPage.module.css';
 
-function MovieDetailsPage() {
+function CourseDetailsPage() {
   const history = useHistory();
   const location = useLocation();
   const { courseId } = useParams();
@@ -16,7 +16,7 @@ function MovieDetailsPage() {
   useEffect(() => {
     coursesAPI.getCourse(courseId).then(course => {
       setCourse(course);
-      setVideoUrl(course.lessons[1].link);
+      setVideoUrl(course.lessons[0].link);
     });
   }, [courseId]);
 
@@ -57,4 +57,4 @@ function MovieDetailsPage() {
   );
 }
 
-export default MovieDetailsPage;
+export default CourseDetailsPage;

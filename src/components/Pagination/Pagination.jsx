@@ -1,5 +1,4 @@
 import Pagination from '@mui/material/Pagination';
-import PaginationItem from '@mui/material/PaginationItem';
 import { useState, useEffect } from 'react';
 
 function usePagination({ currentPage, totalPages, onPageChange }) {
@@ -29,8 +28,6 @@ function usePagination({ currentPage, totalPages, onPageChange }) {
         if (page > 1) {
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-      }}
-      onNextClick={() => {
         if (page < totalPages) {
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }
