@@ -8,7 +8,7 @@ function CoursesPage() {
   const [courses, setCourses] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
 
-  const coursesPerPage = 10;
+  const coursesPerPage = 12;
   const indexOfLastCourse = currentPage * coursesPerPage;
   const indexOfFirstCourse = indexOfLastCourse - coursesPerPage;
   const currentCourses = courses.slice(indexOfFirstCourse, indexOfLastCourse);
@@ -27,35 +27,43 @@ function CoursesPage() {
 
   return (
     <>
-      <h1 className={s.title}>List of courses</h1>
       <ul className={s.list}>
         {currentCourses &&
           currentCourses.map(course => (
             <li key={course.id} className={s.item}>
               <Link
+                className={s.link}
                 to={{
-                  pathname: `/courses/${course.id}`,
+                  pathname: `/course/${course.id}`,
                 }}
               >
-                <h2>{course.title}</h2>{' '}
                 <img
+                  className={s.img}
                   src={course.previewImageLink + '/cover.webp'}
                   alt={course.description}
                 />
-                <p>{course.description}</p>
-                <p>Count of lessons: {course.lessonsCount}</p>
-                <p>
-                  {course.tags &&
-                    course.tags.map(element =>
-                      element
-                        .split(' ')
-                        .map(
-                          word => word.charAt(0).toUpperCase() + word.slice(1),
-                        )
-                        .join(', '),
-                    )}
-                </p>
-                <p>Rating: {course.rating}</p>
+                <div className={s.box}>
+                  <h2 className={s.title}>{course.title}</h2>
+                  <p className={s.description}>{course.description}</p>
+                  <p className={s.lessons}>
+                    Count of lessons: {course.lessonsCount}
+                  </p>
+                  <div className={s.box_rating}>
+                    <p className={s.tags}>
+                      {course.tags &&
+                        course.tags.map(element =>
+                          element
+                            .split(' ')
+                            .map(
+                              word =>
+                                word.charAt(0).toUpperCase() + word.slice(1),
+                            )
+                            .join(', '),
+                        )}
+                    </p>
+                    <p className={s.rating}>Rating: {course.rating}</p>
+                  </div>
+                </div>
               </Link>
             </li>
           ))}

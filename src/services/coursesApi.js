@@ -12,6 +12,7 @@ async function getCourses() {
         Authorization: `Bearer ${token}`,
       },
     });
+    console.log(data);
     return data;
   } catch (error) {
     console.error(error);

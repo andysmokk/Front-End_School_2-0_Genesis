@@ -1,22 +1,38 @@
-import { NavLink } from 'react-router-dom';
-import s from './Navigation.module.css';
+// import { NavLink } from 'react-router-dom';
+// // import s from './Navigation.module.css';
+// // import DrawerAppBar from '../AppBar/AppBar';
 
-const Navigation = () => (
-  <>
-    <nav>
-      <NavLink exact to="/" className={s.link} activeClassName={s.activeLink}>
-        My courses
-      </NavLink>
-      <NavLink
-        to="/find-course"
-        className={s.link}
-        activeClassName={s.activeLink}
-      >
-        Find course
-      </NavLink>
-    </nav>
-    <hr />
-  </>
-);
+// const Navigation = () => {
+//   return (
+//     <>
+//       <DrawerAppBar />
+//       {/* <nav>
+//         <NavLink
+//           to="/"
+//           style={({ isActive }) => {
+//             return {
+//               fontWeight: isActive ? 'bold' : '',
+//               color: isActive ? 'red' : 'black',
+//             };
+//           }}
+//         >
+//           Courses
+//         </NavLink>
+//         <NavLink
+//           to="/course"
+//           style={({ isActive }) => {
+//             return {
+//               fontWeight: isActive ? 'bold' : '',
+//               color: isActive ? 'red' : 'black',
+//             };
+//           }}
+//         >
+//           My course
+//         </NavLink>
+//       </nav>
+//       <hr /> */}
+//     </>
+//   );
+// };
 
-export default Navigation;
+// export default Navigation;

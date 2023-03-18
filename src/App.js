@@ -1,7 +1,10 @@
 import './App.css';
-import { Route, Switch } from 'react-router';
+// import { Route, Switch } from 'react-router';
+// import { Switch, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
-import Navigation from './components/Navigation/Navigation.jsx';
+// import Navigation from './components/Navigation/Navigation.jsx';
+import DrawerAppBar from './components/AppBar/AppBar';
 
 const CoursesPage = lazy(() =>
   import(
@@ -22,22 +25,22 @@ const CourseDetailsPage = lazy(() =>
 function App() {
   return (
     <section className="container">
-      <Navigation />
+      <DrawerAppBar />
 
       <Suspense fallback={<h1>Loading...</h1>}>
-        <Switch>
-          <Route exact path="/">
-            <CoursesPage />
-          </Route>
+        <Routes>
+          <Route path="/" element={<CoursesPage />} />
+          {/* <CoursesPage /> */}
+          {/* </Route> */}
 
-          <Route path="/courses/:courseId">
-            <CourseDetailsPage />
-          </Route>
+          <Route path="/course/:courseId" element={<CourseDetailsPage />} />
+          {/* <CourseDetailsPage /> */}
+          {/* </Route> */}
 
-          <Route>
-            <NotFoundPage />
-          </Route>
-        </Switch>
+          <Route path="*" element={<NotFoundPage />} />
+          {/* <NotFoundPage /> */}
+          {/* </Route> */}
+        </Routes>
       </Suspense>
     </section>
   );

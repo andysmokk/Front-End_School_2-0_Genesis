@@ -1,5 +1,6 @@
 import Pagination from '@mui/material/Pagination';
 import { useState, useEffect } from 'react';
+import s from './Pagination.module.css';
 
 function usePagination({ currentPage, totalPages, onPageChange }) {
   const [page, setPage] = useState(currentPage);
@@ -15,6 +16,7 @@ function usePagination({ currentPage, totalPages, onPageChange }) {
 
   return (
     <Pagination
+      className={s.pagination}
       count={totalPages}
       page={page}
       onChange={handleClick}

@@ -28,13 +28,12 @@ function VideoPlayer({ url, id }) {
         ref={playerRef}
         url={url}
         onProgress={handleVideoProgress}
-        width="60%"
-        height="60%"
+        width="100%"
+        height="100%"
         controls={true}
-        // seekTo={progress}
-        playing={true}
+        pip={true}
+        stopOnUnmount={true}
       />
-      <p>Progress: {progress} seconds</p>
     </div>
   );
 }
