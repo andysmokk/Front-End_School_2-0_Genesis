@@ -1,9 +1,6 @@
 import './App.css';
-// import { Route, Switch } from 'react-router';
-// import { Switch, Route } from 'react-router-dom';
 import { Routes, Route } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
-// import Navigation from './components/Navigation/Navigation.jsx';
 import DrawerAppBar from './components/AppBar/AppBar';
 
 const CoursesPage = lazy(() =>
@@ -30,16 +27,8 @@ function App() {
       <Suspense fallback={<h1>Loading...</h1>}>
         <Routes>
           <Route path="/" element={<CoursesPage />} />
-          {/* <CoursesPage /> */}
-          {/* </Route> */}
-
           <Route path="/course/:courseId" element={<CourseDetailsPage />} />
-          {/* <CourseDetailsPage /> */}
-          {/* </Route> */}
-
           <Route path="*" element={<NotFoundPage />} />
-          {/* <NotFoundPage /> */}
-          {/* </Route> */}
         </Routes>
       </Suspense>
     </section>
