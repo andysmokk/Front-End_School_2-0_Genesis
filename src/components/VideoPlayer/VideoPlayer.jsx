@@ -11,14 +11,12 @@ function VideoPlayer({ url, id }) {
     const savedProgress = localStorage.getItem(`lesson_${id}_progress`);
     if (savedProgress) {
       playerRef.current.seekTo(parseFloat(savedProgress));
-      setProgress(parseFloat(savedProgress));
     }
   }, [id]);
 
-  console.log(progress);
-
-  const handleVideoProgress = event => {
-    const progress = Math.round(event.playedSeconds);
+  const handleVideoProgress = state => {
+    const { playedSeconds } = state;
+    const progress = Math.round(playedSeconds);
     localStorage.setItem(`lesson_${id}_progress`, progress);
     setProgress(progress);
   };
@@ -33,7 +31,8 @@ function VideoPlayer({ url, id }) {
         width="60%"
         height="60%"
         controls={true}
-        seekTo={progress}
+        // seekTo={progress}
+        playing={true}
       />
       <p>Progress: {progress} seconds</p>
     </div>
