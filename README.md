@@ -1,6 +1,6 @@
 # Завдання виконано за допомогою React.js
 
-[Demo - click on me](https://courses-online-test.netlify.app/)
+[Demo - click on me](https://courses-online-test.netlify.app/){:target="\_blank"}
 
 ## Додаток містить дві сторінки:
 
